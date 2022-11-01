@@ -7,13 +7,34 @@ const Tab = createBottomTabNavigator();
 
 const Root = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {backgroundColor: '#14b009'},
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#ccc',
+      }}>
       <Tab.Screen
         name="Hooks"
         component={Hooks}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => null,
+          tabBarLabelStyle: {
+            fontSize: 18,
+          },
+        }}
       />
-      <Tab.Screen name="MobX" component={MobX} options={{headerShown: false}} />
+      <Tab.Screen
+        name="MobX"
+        component={MobX}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => null,
+          tabBarLabelStyle: {
+            fontSize: 18,
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };

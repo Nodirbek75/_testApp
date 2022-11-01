@@ -17,7 +17,7 @@ export default Button;
 
 const Wrapper = styled.TouchableOpacity`
   border-radius: 100px;
-  background-color: green;
+  background-color: #14b009;
   margin-top: 20px;
   padding-vertical: 10px;
   padding-horizontal: 40px;

@@ -19,5 +19,5 @@ const Wrapper = styled.TouchableOpacity`
 
 const Text = styled.Text`
   font-size: 16px;
-  color: blue;
+  color: #16518c;
 `;

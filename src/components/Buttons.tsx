@@ -42,8 +42,8 @@ const Button = styled.TouchableOpacity<{
   border-bottom-left-radius: ${props => (props.left ? 20 : 0)}px;
   border-top-right-radius: ${props => (props.right ? 20 : 0)}px;
   border-bottom-right-radius: ${props => (props.right ? 20 : 0)}px;
-  background-color: ${props => (props.active ? 'green' : '#fff')};
-  padding-vertical: 10px;
+  background-color: ${props => (props.active ? '#14b009' : '#fff')};
+  padding-vertical: 15px;
 `;
 
 const Text = styled.Text<{active: boolean}>`
