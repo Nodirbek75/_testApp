@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
-import {UnitContext} from 'screens/Hooks';
 import styled from 'styled-components/native';
+
+// context
+import {UnitContext} from 'context';
 
 const Buttons: React.FC = () => {
   const unitContext = useContext(UnitContext);
@@ -36,10 +38,10 @@ const Button = styled.TouchableOpacity<{
   flex: 1;
   align-items: center;
   justify-content: center;
-  border-top-left-radius: ${props => (props.left ? 20 : 0)};
-  border-bottom-left-radius: ${props => (props.left ? 20 : 0)};
-  border-top-right-radius: ${props => (props.right ? 20 : 0)};
-  border-bottom-right-radius: ${props => (props.right ? 20 : 0)};
+  border-top-left-radius: ${props => (props.left ? 20 : 0)}px;
+  border-bottom-left-radius: ${props => (props.left ? 20 : 0)}px;
+  border-top-right-radius: ${props => (props.right ? 20 : 0)}px;
+  border-bottom-right-radius: ${props => (props.right ? 20 : 0)}px;
   background-color: ${props => (props.active ? 'green' : '#fff')};
   padding-vertical: 10px;
 `;

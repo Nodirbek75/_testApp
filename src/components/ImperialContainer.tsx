@@ -1,9 +1,11 @@
 import React, {useContext} from 'react';
-import {UnitContext} from 'screens/Hooks';
 import styled from 'styled-components/native';
 
 // components
 import InputField from './InputField';
+
+// context
+import {UnitContext} from 'context';
 
 const ImperialContainer = () => {
   const unitContext = useContext(UnitContext);

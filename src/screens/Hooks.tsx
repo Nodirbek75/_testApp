@@ -1,3 +1,8 @@
+import React, {useEffect, useState} from 'react';
+import styled from 'styled-components/native';
+import {createContext} from 'react';
+
+// components
 import {
   Button,
   Buttons,
@@ -5,57 +10,84 @@ import {
   MetricContainer,
   TextButton,
 } from 'components';
-import React, {useState} from 'react';
-import styled from 'styled-components/native';
-import {createContext} from 'react';
 
-export interface UnitContextInterface {
-  kg: string;
-  meter: string;
-  lps: string;
-  foot: string;
-  inch: string;
-  unit: 'imperial' | 'metric';
-  setKg: (val: string) => void;
-  setMeter: (val: string) => void;
-  setLps: (val: string) => void;
-  setFoot: (val: string) => void;
-  setInch: (val: string) => void;
-  setUnit: (val: 'imperial' | 'metric') => void;
-}
+// utils
+import {
+  convertFtInchToM,
+  convertKgToLps,
+  convertLpsToKg,
+  convertMToFt,
+  convertMToInch,
+  getFromAsyncStorage,
+  saveToAsyncStorage,
+} from 'utils';
 
-export const UnitContext = createContext<UnitContextInterface | undefined>(
-  undefined,
-);
+// context
+import {UnitContext} from 'context';
 
 const Hooks = () => {
   const [kg, setKg] = useState('');
-  const [meter, setMeter] = useState('');
   const [lps, setLps] = useState('');
+  const [meter, setMeter] = useState('');
   const [foot, setFoot] = useState('');
   const [inch, setInch] = useState('');
   const [unit, setUnit] = useState<'imperial' | 'metric'>('imperial');
 
-  const enterKg = (val: string) => {
-    setKg(val);
-    setLps((Number(val) / 0.45359237).toFixed(5));
-  };
+  useEffect(() => {
+    fetchFromDisk();
+  }, []);
+
   const enterMeter = (val: string) => {
     setMeter(val);
-    setFoot((Number(val) * 3.2808).toFixed(5).split('.')[0]);
-    setInch((Number(val) * 3.2808).toFixed(5).split('.')[1]);
-  };
-  const enterLps = (val: string) => {
-    setLps(val);
-    setKg((Number(val) * 0.45359237).toFixed(5));
+    setFoot(convertMToFt(val));
+    setInch(convertMToInch(val));
   };
   const enterFoot = (val: string) => {
     setFoot(val);
-    setMeter((Number(`${val}.${inch}`) / 3.2808).toFixed(5));
+    setMeter(convertFtInchToM(val, inch));
   };
   const enterInch = (val: string) => {
     setInch(val);
-    setMeter((Number(`${foot}.${val}`) / 3.2808).toFixed(5));
+    setMeter(convertFtInchToM(foot, val));
+  };
+  const enterKg = (val: string) => {
+    setKg(val);
+    setLps(convertKgToLps(val));
+  };
+  const enterLps = (val: string) => {
+    setLps(val);
+    setKg(convertLpsToKg(val));
+  };
+
+  const saveToDisk = () => {
+    saveToAsyncStorage({
+      kg,
+      lps,
+      meter,
+      foot,
+      inch,
+      unit,
+    });
+  };
+
+  const fetchFromDisk = async () => {
+    const units = await getFromAsyncStorage('@storage_Units');
+    if (units) {
+      setKg(units.kg);
+      setLps(units.lps);
+      setMeter(units.meter);
+      setFoot(units.foot);
+      setInch(units.inch);
+      setUnit(units.unit);
+    }
+  };
+
+  const resetHandler = () => {
+    setKg('');
+    setLps('');
+    setMeter('');
+    setFoot('');
+    setInch('');
   };
 
   return (
@@ -78,8 +110,8 @@ const Hooks = () => {
         <Title>Unit converter (with hooks)</Title>
         {unit === 'imperial' ? <ImperialContainer /> : <MetricContainer />}
         <Buttons />
-        <Button onPress={() => {}} />
-        <TextButton onPress={() => {}} />
+        <Button onPress={saveToDisk} />
+        <TextButton onPress={resetHandler} />
       </Wrapper>
     </UnitContext.Provider>
   );
