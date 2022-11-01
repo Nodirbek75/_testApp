@@ -4,8 +4,8 @@ import styled from 'styled-components/native';
 type Props = {
   half?: boolean;
   label: string;
-  value?: number;
-  onChangeText: (val: number) => void;
+  value?: string;
+  onChangeText: (val: string) => void;
 };
 
 const InputField: React.FC<Props> = ({half, label, value, onChangeText}) => {

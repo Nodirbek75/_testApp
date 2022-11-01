@@ -11,21 +11,21 @@ const ImperialContainer = () => {
     <Wrapper>
       <InputField
         label="lps"
-        value={unitContext?.kg}
-        onChangeText={val => unitContext?.setKg(val)}
+        value={unitContext?.lps}
+        onChangeText={val => unitContext?.setLps(val)}
       />
       <RowWrapper>
         <InputField
           label="ft"
-          value={unitContext?.meter}
-          onChangeText={val => unitContext?.setMeter(val)}
+          value={unitContext?.foot}
+          onChangeText={val => unitContext?.setFoot(val)}
           half
         />
         <Space />
         <InputField
           label="in"
-          value={unitContext?.meter}
-          onChangeText={val => unitContext?.setMeter(val)}
+          value={unitContext?.inch}
+          onChangeText={val => unitContext?.setInch(val)}
           half
         />
       </RowWrapper>
