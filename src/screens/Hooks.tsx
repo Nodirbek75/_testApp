@@ -1,4 +1,10 @@
-import {Buttons, ImperialContainer, MetricContainer} from 'components';
+import {
+  Button,
+  Buttons,
+  ImperialContainer,
+  MetricContainer,
+  TextButton,
+} from 'components';
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/native';
 import {createContext} from 'react';
@@ -35,6 +41,8 @@ const Hooks = () => {
         <Title>Unit converter (with hooks)</Title>
         {unit === 'imperial' ? <ImperialContainer /> : <MetricContainer />}
         <Buttons />
+        <Button onPress={() => {}} />
+        <TextButton onPress={() => {}} />
       </Wrapper>
     </UnitContext.Provider>
   );
@@ -44,8 +52,9 @@ export default Hooks;
 
 const Wrapper = styled.View`
   flex: 1;
-  background-color: purple;
+  background-color: #1b1b1b;
   justify-content: center;
+  align-items: center;
   padding-horizontal: 25px;
 `;
 

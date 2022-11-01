@@ -31,12 +31,12 @@ const RowWrapper = styled.View<{half: boolean}>`
 `;
 
 const TextInput = styled.TextInput`
-  height: 40px;
   flex: 1;
   border-radius: 100px;
   border: 1px solid #aaa;
   color: #fff;
-  padding-horizontal: 15px;
+  padding-vertical: 10px;
+  padding-horizontal: 20px;
 `;
 
 const Label = styled.Text`

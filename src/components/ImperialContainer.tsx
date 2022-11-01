@@ -35,7 +35,9 @@ const ImperialContainer = () => {
 
 export default ImperialContainer;
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  width: 100%;
+`;
 
 const RowWrapper = styled.View<{half: boolean; marginRight: boolean}>`
   flex-direction: row;

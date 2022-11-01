@@ -23,4 +23,6 @@ const MetricContainer = () => {
 
 export default MetricContainer;
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  width: 100%;
+`;

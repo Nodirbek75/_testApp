@@ -10,13 +10,13 @@ const Buttons: React.FC = () => {
         left
         active={unitContext?.unit === 'imperial'}
         onPress={() => unitContext?.setUnit('imperial')}>
-        <Text>Imperial</Text>
+        <Text active={unitContext?.unit === 'imperial'}>Imperial</Text>
       </Button>
       <Button
         right
         active={unitContext?.unit === 'metric'}
         onPress={() => unitContext?.setUnit('metric')}>
-        <Text>Metric</Text>
+        <Text active={unitContext?.unit === 'metric'}>Metric</Text>
       </Button>
     </Wrapper>
   );
@@ -41,7 +41,7 @@ const Button = styled.TouchableOpacity<{
   border-top-right-radius: ${props => (props.right ? 20 : 0)};
   border-bottom-right-radius: ${props => (props.right ? 20 : 0)};
   background-color: ${props => (props.active ? 'green' : '#fff')};
-  padding-vertical: 20px;
+  padding-vertical: 10px;
 `;
 
 const Text = styled.Text<{active: boolean}>`
