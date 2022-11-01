@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import styled from 'styled-components/native';
 
 // components
-import InputField from './InputField';
+import InputField from '../InputField';
 
 // context
 import {UnitContext} from 'context';
