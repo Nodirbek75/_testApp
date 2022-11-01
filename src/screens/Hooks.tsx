@@ -37,6 +37,14 @@ const Hooks = () => {
     fetchFromDisk();
   }, []);
 
+  const enterKg = (val: string) => {
+    setKg(val);
+    setLps(convertKgToLps(val));
+  };
+  const enterLps = (val: string) => {
+    setLps(val);
+    setKg(convertLpsToKg(val));
+  };
   const enterMeter = (val: string) => {
     setMeter(val);
     setFoot(convertMToFt(val));
@@ -45,18 +53,16 @@ const Hooks = () => {
   const enterFoot = (val: string) => {
     setFoot(val);
     setMeter(convertFtInchToM(val, inch));
+    if (inch === '') {
+      setInch('0');
+    }
   };
   const enterInch = (val: string) => {
     setInch(val);
     setMeter(convertFtInchToM(foot, val));
-  };
-  const enterKg = (val: string) => {
-    setKg(val);
-    setLps(convertKgToLps(val));
-  };
-  const enterLps = (val: string) => {
-    setLps(val);
-    setKg(convertLpsToKg(val));
+    if (foot === '') {
+      setFoot('0');
+    }
   };
 
   const saveToDisk = () => {
