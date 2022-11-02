@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {observer} from 'mobx-react';
 
 // components
 import InputField from '../InputField';
@@ -7,7 +8,7 @@ import InputField from '../InputField';
 // mobx
 import {observableUnitStore} from 'mobx';
 
-const MetricContainer = () => {
+const MetricContainer = observer(() => {
   return (
     <Wrapper>
       <InputField
@@ -22,7 +23,7 @@ const MetricContainer = () => {
       />
     </Wrapper>
   );
-};
+});
 
 export default MetricContainer;
 
