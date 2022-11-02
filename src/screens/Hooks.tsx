@@ -61,7 +61,7 @@ const Hooks = () => {
   };
 
   const saveToDisk = () => {
-    saveToAsyncStorage({
+    saveToAsyncStorage('@storage_Hooks_Units', {
       kg,
       lps,
       meter,
@@ -72,7 +72,7 @@ const Hooks = () => {
   };
 
   const fetchFromDisk = async () => {
-    const units = await getFromAsyncStorage('@storage_Units');
+    const units = await getFromAsyncStorage('@storage_Hooks_Units');
     if (units) {
       setKg(units.kg);
       setLps(units.lps);

@@ -194,7 +194,7 @@
     "@babel/helper-wrap-function" "^7.18.9"
     "@babel/types" "^7.18.9"
 
-"@babel/helper-replace-supers@^7.18.6", "@babel/helper-replace-supers@^7.18.9":
+"@babel/helper-replace-supers@^7.18.6", "@babel/helper-replace-supers@^7.18.9", "@babel/helper-replace-supers@^7.19.1":
   version "7.19.1"
   resolved "https://registry.yarnpkg.com/@babel/helper-replace-supers/-/helper-replace-supers-7.19.1.tgz#e1592a9b4b368aa6bdb8784a711e0bcbf0612b78"
   integrity sha512-T7ahH7wV0Hfs46SFh5Jz3s0B6+o8g3c+7TMxu7xKfmHikg7EAZ3I2Qk9LFhjxXq8sL7UkP5JflezNwoZa8WvWw==
@@ -292,6 +292,17 @@
     "@babel/helper-create-class-features-plugin" "^7.18.6"
     "@babel/helper-plugin-utils" "^7.18.6"
 
+"@babel/plugin-proposal-decorators@^7.20.0":
+  version "7.20.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.20.0.tgz#3acef1f1206d7a6a1436aa6ccf9ed7b1bd06aff7"
+  integrity sha512-vnuRRS20ygSxclEYikHzVrP9nZDFXaSzvJxGLQNAiBX041TmhS4hOUHWNIpq/q4muENuEP9XPJFXTNFejhemkg==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.19.0"
+    "@babel/helper-plugin-utils" "^7.19.0"
+    "@babel/helper-replace-supers" "^7.19.1"
+    "@babel/helper-split-export-declaration" "^7.18.6"
+    "@babel/plugin-syntax-decorators" "^7.19.0"
+
 "@babel/plugin-proposal-export-default-from@^7.0.0":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-export-default-from/-/plugin-proposal-export-default-from-7.18.10.tgz#091f4794dbce4027c03cf4ebc64d3fb96b75c206"
@@ -356,6 +367,13 @@
   integrity sha512-fm4idjKla0YahUNgFNLCB0qySdsoPiZP3iQE3rky0mBUtMZ23yDJ9SJdg6dXTSDnulOVqiF3Hgr9nbXvXTQZYA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.12.13"
+
+"@babel/plugin-syntax-decorators@^7.19.0":
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-decorators/-/plugin-syntax-decorators-7.19.0.tgz#5f13d1d8fce96951bea01a10424463c9a5b3a599"
+  integrity sha512-xaBZUEDntt4faL1yN8oIFlhfXeQAWJW7CLKYsHTUqriCUbj8xOra8bfxxKGi/UwExPFBuPdH4XfHc9rGQhrVkQ==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.19.0"
 
 "@babel/plugin-syntax-dynamic-import@^7.0.0":
   version "7.8.3"
@@ -5320,6 +5338,23 @@ mkdirp@^0.5.1:
   integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
   dependencies:
     minimist "^1.2.6"
+
+mobx-react-lite@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-3.4.0.tgz#d59156a96889cdadad751e5e4dab95f28926dfff"
+  integrity sha512-bRuZp3C0itgLKHu/VNxi66DN/XVkQG7xtoBVWxpvC5FhAqbOCP21+nPhULjnzEqd7xBMybp6KwytdUpZKEgpIQ==
+
+mobx-react@^7.5.3:
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-7.5.3.tgz#74b1c148d2f2a1affab3153ea570ab52c7eff70c"
+  integrity sha512-+ltotliKt4Bjn3d8taZH/VFAcRUbaASvsM8/QSvmHXcZ++RZwaFtjl9JkIosy1byaJGEDS3EFFx2InRm2VaSUw==
+  dependencies:
+    mobx-react-lite "^3.4.0"
+
+mobx@^6.6.2:
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.6.2.tgz#9d9102a0e337e3fc09cb2d8ca0c6f00b61270d5a"
+  integrity sha512-IOpS0bf3+hXIhDIy+CmlNMBfFpAbHS0aVHcNC+xH/TFYEKIIVDKNYRh9eKlXuVfJ1iRKAp0cRVmO145CyJAMVQ==
 
 ms@2.0.0:
   version "2.0.0"

@@ -20,8 +20,8 @@ export const convertLpsToKg = (lps: string) => {
   return (Number(lps) * 0.45359237).toFixed(5);
 };
 
-export const saveToAsyncStorage = async (units: {}) => {
-  await AsyncStorage.setItem('@storage_Units', JSON.stringify(units));
+export const saveToAsyncStorage = async (key: string, units: {}) => {
+  await AsyncStorage.setItem(key, JSON.stringify(units));
 };
 
 export const getFromAsyncStorage = async (key: string) => {
