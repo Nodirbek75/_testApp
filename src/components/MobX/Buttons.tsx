@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {observer} from 'mobx-react';
 
 // mobx
-import observableUnitStore from 'mobx/unitStore';
+import {observableUnitStore} from 'mobx';
 
 const Buttons: React.FC = observer(() => {
   return (

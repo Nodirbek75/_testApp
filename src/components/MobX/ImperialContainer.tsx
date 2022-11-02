@@ -6,7 +6,7 @@ import {observer} from 'mobx-react';
 import InputField from '../InputField';
 
 // mobx
-import observableUnitStore from 'mobx/unitStore';
+import {observableUnitStore} from 'mobx';
 
 const ImperialContainer = observer(() => {
   return (

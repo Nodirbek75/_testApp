@@ -1,24 +1,25 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
-// context
-import {UnitContext} from 'context';
+// hooks
+import {useUnitContext} from 'hooks';
 
 const Buttons: React.FC = () => {
-  const unitContext = useContext(UnitContext);
+  const {unit, setUnit} = useUnitContext();
+
   return (
     <Wrapper>
       <Button
         left
-        active={unitContext?.unit === 'imperial'}
-        onPress={() => unitContext?.setUnit('imperial')}>
-        <Text active={unitContext?.unit === 'imperial'}>Imperial</Text>
+        active={unit === 'imperial'}
+        onPress={() => setUnit('imperial')}>
+        <Text active={unit === 'imperial'}>Imperial</Text>
       </Button>
       <Button
         right
-        active={unitContext?.unit === 'metric'}
-        onPress={() => unitContext?.setUnit('metric')}>
-        <Text active={unitContext?.unit === 'metric'}>Metric</Text>
+        active={unit === 'metric'}
+        onPress={() => setUnit('metric')}>
+        <Text active={unit === 'metric'}>Metric</Text>
       </Button>
     </Wrapper>
   );

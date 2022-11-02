@@ -1,33 +1,30 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
 // components
 import InputField from '../InputField';
 
-// context
-import {UnitContext} from 'context';
+// hooks
+import {useUnitContext} from 'hooks';
 
 const ImperialContainer = () => {
-  const unitContext = useContext(UnitContext);
+  const {lps, foot, inch, setLps, setFoot, setInch} = useUnitContext();
+
   return (
     <Wrapper>
-      <InputField
-        label="lps"
-        value={unitContext?.lps}
-        onChangeText={val => unitContext?.setLps(val)}
-      />
+      <InputField label="lps" value={lps} onChangeText={val => setLps(val)} />
       <RowWrapper>
         <InputField
           label="ft"
-          value={unitContext?.foot}
-          onChangeText={val => unitContext?.setFoot(val)}
+          value={foot}
+          onChangeText={val => setFoot(val)}
           half
         />
         <Space />
         <InputField
           label="in"
-          value={unitContext?.inch}
-          onChangeText={val => unitContext?.setInch(val)}
+          value={inch}
+          onChangeText={val => setInch(val)}
           half
         />
       </RowWrapper>

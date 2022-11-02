@@ -7,7 +7,7 @@ import {Buttons, ImperialContainer, MetricContainer} from 'components/MobX';
 import {Button, TextButton} from 'components';
 
 // mobx
-import observableUnitStore from 'mobx/unitStore';
+import {observableUnitStore} from 'mobx';
 
 const MobX = observer(() => {
   useEffect(() => {

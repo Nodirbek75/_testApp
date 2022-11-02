@@ -1,26 +1,19 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
 // components
 import InputField from '../InputField';
 
-// context
-import {UnitContext} from 'context';
+// hooks
+import {useUnitContext} from 'hooks';
 
 const MetricContainer = () => {
-  const unitContext = useContext(UnitContext);
+  const {kg, meter, setKg, setMeter} = useUnitContext();
+
   return (
     <Wrapper>
-      <InputField
-        label="kg"
-        value={unitContext?.kg}
-        onChangeText={val => unitContext?.setKg(val)}
-      />
-      <InputField
-        label="m"
-        value={unitContext?.meter}
-        onChangeText={val => unitContext?.setMeter(val)}
-      />
+      <InputField label="kg" value={kg} onChangeText={val => setKg(val)} />
+      <InputField label="m" value={meter} onChangeText={val => setMeter(val)} />
     </Wrapper>
   );
 };
